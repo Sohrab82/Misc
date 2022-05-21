@@ -3,18 +3,23 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 img = cv2.imread('threshold_sample.jpg', 0)
+ 
+any_number_but_zero = 255 # this value does not matter
+thresh_val = 30
 
-any_number_but_zero = 255
-thresh_val = 127
-
+# set anything below the thresold to zero and above it to 255
 ret, thresh1 = cv2.threshold(
     img, thresh_val, any_number_but_zero, cv2.THRESH_BINARY)
+# set anything below the thresold to 255 and above it to 0
 ret, thresh2 = cv2.threshold(
     img, thresh_val, any_number_but_zero, cv2.THRESH_BINARY_INV)
+# set anything above the thresold to 255
 ret, thresh3 = cv2.threshold(
     img, thresh_val, any_number_but_zero, cv2.THRESH_TRUNC)
+# set anything below the thresold to Zero
 ret, thresh4 = cv2.threshold(
     img, thresh_val, any_number_but_zero, cv2.THRESH_TOZERO)
+# set anything above the thresold to Zero
 ret, thresh5 = cv2.threshold(
     img, thresh_val, any_number_but_zero, cv2.THRESH_TOZERO_INV)
 
