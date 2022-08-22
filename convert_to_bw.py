@@ -3,7 +3,7 @@ import numpy as np
 import os
 
 
-img_filename = "test.jpg"
+img_filename = "pic1.jpg"
 image = cv2.imread(img_filename)
 
 print(image.shape)
